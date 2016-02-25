@@ -1,4 +1,8 @@
-$(function(){
-	alert("board");
-});
+var $Grid = {};
 
+$(function(){
+	$Grid = $("#myGrid");
+	$Grid.jqGrid({
+		
+	});
+});

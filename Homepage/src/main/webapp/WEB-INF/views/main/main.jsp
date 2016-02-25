@@ -14,7 +14,7 @@
 <title>메인페이지</title>
 </head>
 <body>
-<jsp:include page="../common/nav_side_page.jsp" flush="false"/>
+<jsp:include page="../common/navigator.jsp" flush="false"/>
 <div id="page-wrapper">
  	<div id="page-content-wrapper">
 		<div class="container-fluid">
