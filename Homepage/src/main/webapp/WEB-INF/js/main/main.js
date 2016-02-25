@@ -1,3 +1,3 @@
 $(function(){
-	alert("main");
+	//alert("main");
 });
