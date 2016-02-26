@@ -35,6 +35,20 @@
 			"age":"50",
 			"sex":"M",
 			"position":"사장"
+		},
+		{
+			"id":"006",
+			"name":"test6",
+			"age":"40",
+			"sex":"F",
+			"position":"과장"
+		},
+		{
+			"id":"007",
+			"name":"test7",
+			"age":"40",
+			"sex":"F",
+			"position":"과장"
 		}
 	]
 }

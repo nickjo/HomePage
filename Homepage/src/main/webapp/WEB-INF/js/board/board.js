@@ -10,6 +10,8 @@ $(function(){
 			id: "id",
 			root: "employee"
 		},
+		rowNum: "10",
+		pager:'#pager',
 		colNames:[
 		          '아이디',
 		          '이름',
@@ -24,8 +26,6 @@ $(function(){
 		           {name:"sex", width:80, align:"right"},
 		           {name:"position", width:50, align:"right"}
 		           ],
-        pager:"#pager",
-        rowNum: "10",
         multiselect: true,
         postData: {
         	id: "id",
