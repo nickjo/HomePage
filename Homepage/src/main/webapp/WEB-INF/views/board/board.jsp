@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/jqGrid/ui.jqgrid-bootstrap.css" />
 <link rel="stylesheet" type="text/css" media="screen"
@@ -32,6 +33,7 @@
 <title>게시판</title>
 </head>
 <body>
+<input type="hidden" id="jsontest" value="${boardVO}">
 	<!-- navigator -->
 	<div id="page-wrapper">
 		<jsp:include page="../common/navigator.jsp" flush="false" />
@@ -45,19 +47,11 @@
 		<div id="page-content-wrapper">
 			<div class="container-fluid">
 				<table id="myGrid"></table>
-				<div id="pager"></div>
+				<div id="pager1"></div>
 			</div>
 		</div>
 		<!--// jqGrid  -->
 	</div>
 	<!--// navigator -->
-	<!-- <div id="page-wrapper">
-		<div id="page-content-wrapper">
-			<div class="container-fluid">
-				<table id="myGrid"></table>
-				<div id="pager"></div>
-			</div>
-		</div>
-	</div> -->
 </body>
 </html>

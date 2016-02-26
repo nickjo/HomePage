@@ -8,6 +8,7 @@
  		<result property="age" column="age"/>
  		<result property="sex" column="sex"/>
  		<result property="local" column="local"/>
+ 		<result property="deptno" column="deptno"/>
  	</resultMap>
  </mapper>
   

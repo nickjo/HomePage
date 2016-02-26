@@ -8,7 +8,14 @@ public class BoardVO {
 	int age;
 	String sex;
 	String local;
+	int deptno;
 	
+	public int getDeptno() {
+		return deptno;
+	}
+	public void setDeptno(int deptno) {
+		this.deptno = deptno;
+	}
 	public String getName() {
 		return name;
 	}
@@ -36,6 +43,6 @@ public class BoardVO {
 	
 	@Override
 	public String toString(){
-		return "Board=[name:" + name + ", age:" + age + ", sex:" + sex + ", local:" + local;
+		return "Board=[name:" + name + ", age:" + age + ", sex:" + sex + ", local:" + local + ", deptno:" + deptno + "]";
 	}
 }

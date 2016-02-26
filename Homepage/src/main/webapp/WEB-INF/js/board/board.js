@@ -3,33 +3,42 @@ var $Grid = {};
 $(function(){
 	$Grid = $("#myGrid");
 	$Grid.jqGrid({
-		url: 'js/json/test.json',
+		url: 'boardGsonList.do',
 		datatype: "json",
 		mtype: "get",
-		jsonReader: { 
-			id: "id",
-			root: "employee"
-		},
+		height: "300",
+		autowidth: true,
+		rownumbers:true,
+		pager: '#pager1',
+		/*jsonReader: { 
+			root: "boardVO"
+		},*/
 		rowNum: "10",
-		pager:'#pager',
+		rowList: [10,20,50],
+		pager:'#pager1',
 		colNames:[
-		          '아이디',
 		          '이름',
 		          '나이',
 		          '성별',
-		          '직위'
+		          '지역',
+		          '부서'
 		          ],
 		colModel: [
-		           {name:"id", width:40, align:"center"},
-		           {name:"name", width:80, align:"left"},
+		           {name:"name", width:40, align:"center"},
 		           {name:"age", width:80, align:"left"},
-		           {name:"sex", width:80, align:"right"},
-		           {name:"position", width:50, align:"right"}
+		           {name:"sex", width:80, align:"left"},
+		           {name:"local", width:80, align:"right"},
+		           {name:"deptno",width:20, align:"center"},
 		           ],
         multiselect: true,
-        postData: {
+        sortname: "name",
+        jsonReader: {
+        	repeatitems:false
+	    }
+      /*  postData: {
         	id: "id",
         	name: "name"
-        }
+        }*/
 	});
+	$("#list2").jqGrid('navGrid','#pager1',{edit:false,add:false,del:false});
 });

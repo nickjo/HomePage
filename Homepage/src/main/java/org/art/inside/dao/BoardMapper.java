@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import org.art.inside.domain.BoardVO;
 
 public interface BoardMapper {
-	@Select("SELECT NAME,AGE,SEX,LOCAL FROM BOARD;")
+	@Select("SELECT NAME,AGE,SEX,LOCAL,DEPTNO FROM BOARD;")
 	@ResultMap("boardResultMap")
 	public List<BoardVO> getBoard();
 }
