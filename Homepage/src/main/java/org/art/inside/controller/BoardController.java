@@ -78,4 +78,10 @@ public class BoardController {
 		log.info("moveSideMenuPage()");
 		return "sideMenu/sm_0001";
 	}
+	
+	@RequestMapping(value="boardWrite.do", method=RequestMethod.GET)
+	public String boardWritePopUp(){
+		log.info("boardWrite.do");
+		return "board/write_pop";
+	}
 }
