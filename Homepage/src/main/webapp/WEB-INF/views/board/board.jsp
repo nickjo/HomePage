@@ -47,7 +47,8 @@
 		<div id="page-content-wrapper">
 			<div class="container-fluid">
 				<table id="myGrid"></table>
-				<div id="pager1"></div>
+				<div id="pager1" class="ui-state-default ui-jqgrid-pager ui-corner-bottom" dir="ltr"></div>
+				<!-- <div id="pkeynav" class="ui-state-default ui-jqgrid-pager ui-corner-bottom" dir="ltr" style="width: 700px;"> -->
 			</div>
 		</div>
 		<!--// jqGrid  -->

@@ -9,11 +9,10 @@ $(function(){
 		height: "300",
 		autowidth: true,
 		rownumbers:true,
-		pager: '#pager1',
 		/*jsonReader: { 
 			root: "boardVO"
 		},*/
-		rowNum: "10",
+		rowNum: "20",
 		rowList: [10,20,50],
 		pager:'#pager1',
 		colNames:[
@@ -34,11 +33,9 @@ $(function(){
         sortname: "name",
         jsonReader: {
         	repeatitems:false
-	    }
-      /*  postData: {
-        	id: "id",
-        	name: "name"
-        }*/
-	});
-	$("#list2").jqGrid('navGrid','#pager1',{edit:false,add:false,del:false});
+	    },
+	    gridview: true,
+	    viewrecords: true
+	}).navGrid('#pager1', { edit: false, add: false, del: false, refresh: true, search: false });
+	//$("#list2").jqGrid('navGrid','#pager1',{edit:false,add:false,del:false});
 });
