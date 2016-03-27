@@ -9,6 +9,8 @@ public class BoardVO {
 	String sex;
 	String local;
 	int deptno;
+	String title;
+	String content;
 	
 	public int getDeptno() {
 		return deptno;
@@ -40,9 +42,21 @@ public class BoardVO {
 	public void setLocal(String local) {
 		this.local = local;
 	}
+	public String getTitile() {
+		return title;
+	}
+	public void setTitile(String title) {
+		this.title = title;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
 	
 	@Override
 	public String toString(){
-		return "Board=[name:" + name + ", age:" + age + ", sex:" + sex + ", local:" + local + ", deptno:" + deptno + "]";
+		return "Board=[name:" + name + ", age:" + age + ", sex:" + sex + ", local:" + local + ", deptno:" + deptno + ", title:" + title + ", content:" + content + "]";
 	}
 }

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.google.gson.Gson;
 
 @Controller
+@RequestMapping("board")
 //@SessionAttributes("board")
 public class BoardController {
 	@Autowired
@@ -30,6 +31,14 @@ public class BoardController {
 		return "board/board";
 	}
 	
+	// 새글 등록
+	@RequestMapping(value="insertBoard.do", method=RequestMethod.POST)
+	public String insertBoard(BoardVO board, Model model) throws Exception{
+		log.info("insertBoard()");
+		model.addAttribute("board", boardServiceImpl.insertBoard(board));
+		return "board/board";
+	}
+	
 	@RequestMapping(value="boardGsonList.do", method=RequestMethod.GET, produces="text/plain;charset=UTF-8")
 	public @ResponseBody String getBoardGsonList(BoardVO boardVO ,Model model){
 		log.info("boardGsonList()");
@@ -38,7 +47,7 @@ public class BoardController {
 		
 		List<BoardVO> list = boardServiceImpl.getBoard();
 		//model.addAttribute("boardVO", new Gson().toJson(list));
-		//System.out.println(model.toString());
+		System.out.println(model.toString());
 		
 		return gson.toJson(list);
 	}
@@ -77,5 +86,11 @@ public class BoardController {
 	public String moveSideMenuPage(){
 		log.info("moveSideMenuPage()");
 		return "sideMenu/sm_0001";
+	}
+	
+	@RequestMapping(value="boardWrite.do", method=RequestMethod.GET)
+	public String boardWritePopUp(){
+		log.info("boardWrite.do");
+		return "board/board_write";
 	}
 }

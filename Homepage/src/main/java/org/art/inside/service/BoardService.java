@@ -7,4 +7,5 @@ import org.art.inside.domain.BoardVO;
 
 public interface BoardService {
 	public List<BoardVO> getBoard();
+	public void insertBoard(BoardVO board);
 }

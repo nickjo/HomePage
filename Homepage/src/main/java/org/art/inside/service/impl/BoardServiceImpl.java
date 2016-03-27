@@ -20,4 +20,10 @@ public class BoardServiceImpl implements BoardService{
 		return boardMapper.getBoard();
 	}
 
+	@Override
+	public void insertBoard(BoardVO board) {
+		// TODO Auto-generated method stub
+		
+		
+	}
 }
