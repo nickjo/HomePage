@@ -8,15 +8,18 @@ import org.art.inside.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.google.gson.Gson;
 
 @Controller
-@RequestMapping("board")
+//@RequestMapping("board")
 //@SessionAttributes("board")
 public class BoardController {
 	@Autowired
@@ -31,11 +34,26 @@ public class BoardController {
 		return "board/board";
 	}
 	
+	// SYSTEM 메뉴
+	@RequestMapping(value="systemMenu.do", method=RequestMethod.GET)
+	public String systemMenu(){
+		log.info("=========SystemMenu=============");
+		
+		return "systemMenu/systemMenu";
+	}
+	
 	// 새글 등록
 	@RequestMapping(value="insertBoard.do", method=RequestMethod.POST)
-	public String insertBoard(BoardVO board, Model model) throws Exception{
-		log.info("insertBoard()");
-		model.addAttribute("board", boardServiceImpl.insertBoard(board));
+	public String insertBoard(@RequestParam("title") String title,
+							  //@RequestParam("content") String content,
+							  BoardVO board,
+							  Model model) throws Exception{
+		
+		// 왜 title의 벨류는 자동 저장이 안되고 null이 뜨는가...이유 확인 필요
+		board.setTitile(title);
+		log.info("insertBoard(), BoardVO: " + board.toString());
+		boardServiceImpl.insertBoard(board);
+		
 		return "board/board";
 	}
 	
@@ -47,7 +65,7 @@ public class BoardController {
 		
 		List<BoardVO> list = boardServiceImpl.getBoard();
 		//model.addAttribute("boardVO", new Gson().toJson(list));
-		System.out.println(model.toString());
+		//System.out.println(list.toString());
 		
 		return gson.toJson(list);
 	}

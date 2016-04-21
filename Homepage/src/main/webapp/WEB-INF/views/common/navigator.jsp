@@ -45,6 +45,7 @@
 								class="sr-only">(current)</span></a></li>
 						<li><a href="product.do">PROJECT</a></li>
 						<li><a href="board.do">BLOG</a></li>
+						<li><a href="board.do">SYSTEM</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-expanded="false">Dropdown
 								<span class="caret"></span>

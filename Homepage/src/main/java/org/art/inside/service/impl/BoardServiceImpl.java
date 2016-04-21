@@ -23,7 +23,7 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public void insertBoard(BoardVO board) {
 		// TODO Auto-generated method stub
-		
-		
+		System.out.println("####boardServiceImple: " + board.toString());
+		boardMapper.insertBoard(board);
 	}
 }

@@ -27,6 +27,8 @@ function fn_Insert(){
 		$("#content").focus();
 		return;
 	}
+	console.log($("input[name=title]").val());
+	alert("저장 되었습니다");
 	
 	var frm = document.frm;
 	frm.method = "post";

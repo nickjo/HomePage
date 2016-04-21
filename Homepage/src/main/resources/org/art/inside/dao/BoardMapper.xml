@@ -9,6 +9,8 @@
  		<result property="sex" column="sex"/>
  		<result property="local" column="local"/>
  		<result property="deptno" column="deptno"/>
+ 		<result property="title" column="title"/>
+ 		<result property="content" column="content"/>
  	</resultMap>
  </mapper>
   
